@@ -13,6 +13,8 @@ This AppImage bundles the latest version of `mesa` (including vulkan drivers) fr
 USAGE: MESA.AppImage /path/to/application
 ```
 
+This will only work other binaries on the system, it will not work with other appimages on the system.
+
 ---
 
 AppImage made using [sharun](https://github.com/VHSgunzo/sharun), which makes it extremely easy to turn any binary into a portable package without using containers or similar tricks.
