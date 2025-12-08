@@ -16,7 +16,7 @@ export DEPLOY_VULKAN=1
 export ANYLINUX_LIB=0 # we want our env to leak into the child here
 
 # Deploy dependencies
-quick-sharun /usr/bin/vkcube /usr/bin/glxgears
+quick-sharun /usr/bin/vkcube /usr/bin/glxgears /usr/bin/env
 rm -f \
 	./AppDir/bin/vkcube   \
 	./AppDir/bin/glxgears \
