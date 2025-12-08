@@ -2,6 +2,18 @@
 
 set -e
 
+SHARUN="$APPDIR"/sharun
+LIBRARY_PATH="$SHARUN_EXTRA_LIBRARY_PATH:$APPDIR/shared/lib:$LD_LIBRARY_PATH"
+
+if [ "$APPIMAGE_ARCH" = 'x86_64' ]; then
+	DLINKER="$APPDIR"/shared/lib/ld-linux-x86-64.so.2
+elif [ "$APPIMAEG_ARCH" = 'aarch64' ]; then
+	DLINKER="$APPDIR"/shared/lib/ld-linux-aarch64.so.1
+else
+	>&2 echo "Something broke terribly here"
+	exit 1
+fi
+
 _help() {
 	>&2 echo ""
 	>&2 echo "  USAGE: ${APPIMAGE##*/} /path/to/application"
@@ -15,14 +27,12 @@ _test() {
 	exec "$APPDIR"/sharun vkcube
 }
 
+_exec() {
+	exec "$SHARUN" env "$DLINKER" --library-path "$LIBRARY_PATH" --argv0 "$1" "$@"
+}
+
 case "$1" in
-	''|--help)
-		_help
-		;;
-	--test)
-		_test
-		;;
-	*)
-		exec "$APPDIR"/sharun env "$@"
-		;;
+	''|--help|-h|-H) _help;;
+	--test|-t)       _test;;
+	*)               _exec "$@";;
 esac
