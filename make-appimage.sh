@@ -4,6 +4,7 @@ set -eu
 
 ARCH=$(uname -m)
 VERSION=$(pacman -Q mesa | awk '{print $2; exit}') # example command to get version of application here
+VERSION=${VERSION#*:}
 export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
