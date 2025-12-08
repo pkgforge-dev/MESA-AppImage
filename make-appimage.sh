@@ -17,6 +17,7 @@ export ANYLINUX_LIB=0 # we want our env to leak into the child here
 
 # Deploy dependencies
 quick-sharun /usr/bin/vkcube /usr/bin/glxgears
+rm -f ./AppDir/bin/xdg-open
 
 # Additional changes can be done in between here
 
