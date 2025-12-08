@@ -8,7 +8,7 @@ VERSION=${VERSION#*:}
 export ARCH VERSION
 export OUTPATH=./dist
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=DUMMY
+export ICON="https://gitlab.freedesktop.org/mesa/mesa/-/raw/main/docs/favicon.svg"
 export DESKTOP=DUMMY
 export APPNAME=MESA
 export DEPLOY_OPENGL=1
