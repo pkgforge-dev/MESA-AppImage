@@ -1,9 +1,17 @@
-# TEMPLATE-AppImage 🐧
+# MESA-AppImage 🐧
 
-[![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/TEMPLATE-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/TEMPLATE-AppImage/releases/latest)
-[![CI Build Status](https://github.com//pkgforge-dev/TEMPLATE-AppImage/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/TEMPLATE-AppImage/releases/latest)
+[![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/MESA-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/MESA-AppImage/releases/latest)
+[![CI Build Status](https://github.com//pkgforge-dev/MESA-AppImage/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/MESA-AppImage/releases/latest)
 
-* [Latest Stable Release](https://github.com/pkgforge-dev/TEMPLATE-AppImage/releases/latest)
+* [Latest Stable Release](https://github.com/pkgforge-dev/MESA-AppImage/releases/latest)
+
+---
+
+This AppImage bundles the latest version of `mesa` (including vulkan drivers) from archlinux. **With this you can make another application on your system use these mesa drivers.**
+
+```
+USAGE: MESA.AppImage /path/to/application
+```
 
 ---
 
@@ -20,7 +28,3 @@ More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/
     <img src="https://github.com/user-attachments/assets/d40067a6-37d2-4784-927c-2c7f7cc6104b" alt="Inspiration Image">
   </a>
 </details>
-
----
-
-# Fork this repository to quickly make an AppImage using the [Anylinux-AppImages](https://github.com/pkgforge-dev/Anylinux-AppImages) tools
