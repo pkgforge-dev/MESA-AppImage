@@ -7,13 +7,15 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm  \
+	dash             \
 	libxcb           \
 	libxcursor       \
 	libxkbcommon-x11 \
 	libxrandr        \
 	libxtst          \
 	mesa-utils       \
-	vulkan-tools     \
+	vulkan-tools
+ln -sfT dash /usr/bin/sh
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
