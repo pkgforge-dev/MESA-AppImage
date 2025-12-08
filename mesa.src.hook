@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+_help() {
+	>&2 echo ""
+	>&2 echo "  USAGE: ${APPIMAGE##*/} /path/to/application"
+	>&2 echo "  Use --test to launch bundled glxgears and vkcube"
+	>&2 echo ""
+	exit 1
+}
+
+_test() {
+	"$APPDIR"/sharun glxgears &
+	exec "$APPDIR"/sharun vkcube
+}
+
+case "$1" in
+	''|--help)
+		_help
+		;;
+	--test)
+		_test
+		;;
+	*)
+		exec "$APPDIR"/sharun "$@"
+		;;
+esac
