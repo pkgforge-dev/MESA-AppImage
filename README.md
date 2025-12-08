@@ -15,6 +15,8 @@ USAGE: MESA.AppImage /path/to/application
 
 This will only work other binaries on the system, it will not work with other appimages on the system.
 
+<img width="1096" height="847" alt="image" src="https://github.com/user-attachments/assets/da4cbf27-747a-4b60-9572-c18ff4f87f2f" />
+
 ---
 
 AppImage made using [sharun](https://github.com/VHSgunzo/sharun), which makes it extremely easy to turn any binary into a portable package without using containers or similar tricks.
