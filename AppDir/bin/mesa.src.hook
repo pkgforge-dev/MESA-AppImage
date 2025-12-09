@@ -28,7 +28,20 @@ _test() {
 }
 
 _exec() {
-	exec "$SHARUN" env "$DLINKER" --library-path "$LIBRARY_PATH" --argv0 "$1" "$@"
+	case "$(head -c 10 "$1")" in
+		*ELF*AI|*ELF*RI|*ELF*AB)
+			export LD_LIBRARY_PATH="$LIBRARY_PATH"
+			exec "$SHARUN" env "$@"
+			;;
+		*ELF*)
+			exec "$SHARUN" env "$DLINKER" \
+			  --library-path "$LIBRARY_PATH" --argv0 "$1" "$@"
+			;;
+		*)
+			export LD_LIBRARY_PATH="$LIBRARY_PATH"
+			exec "$SHARUN" env "$@"
+			;;
+	esac 2>/dev/null
 }
 
 case "$1" in
