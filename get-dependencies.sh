@@ -17,10 +17,10 @@ pacman -Syu --noconfirm  \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-mesa
+#get-debloated-pkgs --add-mesa
+pacman -Syu --noconfirm mesa vulkan-radeon vulkan-intel vulkan-swrast vulkan-nouveau
 
 # Comment this out if you need an AUR package
 #make-aur-package PACKAGENAME
-pacman -Syu --noconfirm mesa vulkan-radeon vulkan-intel vulkan-swrast vulkan-nouveau
 
 # If the application needs to be manually built that has to be done down here
