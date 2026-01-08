@@ -13,6 +13,7 @@ export DESKTOP=DUMMY
 export APPNAME=MESA
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
+export MAIN_BIN=env
 export ANYLINUX_LIB=0 # we want our env to leak into the child here
 
 # Deploy dependencies
