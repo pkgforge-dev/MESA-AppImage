@@ -18,7 +18,11 @@ pacman -Syu --noconfirm  \
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 #get-debloated-pkgs --add-mesa
-pacman -Syu --noconfirm mesa vulkan-radeon vulkan-intel vulkan-swrast vulkan-nouveau
+pacman -Syu --noconfirm mesa vulkan-radeon vulkan-swrast vulkan-nouveau
+
+if [ "$ARCH" = 'x86_64' ]; then
+	pacman -Syu --noconfirm vulkan-intel 
+fi
 
 # Comment this out if you need an AUR package
 #make-aur-package PACKAGENAME
